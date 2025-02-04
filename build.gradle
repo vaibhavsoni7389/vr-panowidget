@@ -28,6 +28,19 @@ allprojects {
     }
 }
 
+plugins {
+    id 'maven-publish'
+}
+
+// Publishing configuration for JitPack
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

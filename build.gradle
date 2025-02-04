@@ -14,6 +14,19 @@ buildscript {
     }
 }
 
+plugins {
+    id 'maven-publish'
+}
+
+// Publishing configuration for JitPack
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
 allprojects {
     repositories {
         google()
@@ -25,19 +38,6 @@ allprojects {
         }
         // You can also use a local Maven repository if desired.
         mavenLocal()
-    }
-}
-
-plugins {
-    id 'maven-publish'
-}
-
-// Publishing configuration for JitPack
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
     }
 }
 

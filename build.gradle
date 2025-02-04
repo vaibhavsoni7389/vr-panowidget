@@ -22,7 +22,7 @@ plugins {
 publishing {
     publications {
         mavenJava(MavenPublication) {
-            from components.java
+            from components["release"]
         }
     }
 }

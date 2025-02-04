@@ -1,4 +1,14 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'maven-publish'
+}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
 
 buildscript {
     // This configures the Gradle build system, but not the GVR components.
